@@ -1,0 +1,166 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "arithmetic tables",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "ChooseOperation",
+          "slots": [
+            {
+              "name": "operation",
+              "type": "operation",
+              "samples": [
+                "{operation}"
+              ]
+            }
+          ],
+          "samples": [
+            "{operation}"
+          ]
+        },
+        {
+          "name": "ChooseNumber",
+          "slots": [
+            {
+              "name": "number",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{number}"
+              ]
+            }
+          ],
+          "samples": [
+            "{number}"
+          ]
+        },
+        {
+          "name": "test",
+          "slots": [],
+          "samples": [
+            "test"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "id": "1",
+              "name": {
+                "value": "division"
+              }
+            },
+            {
+              "id": "2",
+              "name": {
+                "value": "times"
+              }
+            },
+            {
+              "id": "3",
+              "name": {
+                "value": "subtraction"
+              }
+            },
+            {
+              "id": "4",
+              "name": {
+                "value": "addition"
+              }
+            }
+          ],
+          "name": "operation"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "ChooseOperation",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "operation",
+              "type": "operation",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.882526274112.1591299473891"
+              },
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.882526274112.1591299473891.1483727451751"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ChooseNumber",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "number",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.706066795313.879669086444"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Slot.Validation.882526274112.1591299473891.1483727451751",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Sorry, I did not understand the operation. Please choose from addition, subtraction, times, division. "
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.706066795313.879669086444",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "please choose a number from one to ten."
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.882526274112.1591299473891",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Ok. Which operation would you like to choose from addition, subtraction, times, division"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "3"
+}
