@@ -6,6 +6,6 @@
 Let the user choose a number between 1 and 10 and an operation between addition, subtraction, times and division. The game asks 10 random questions with the chosen number and the operation and then gives a grade at the end.
 
 ### V2
-
+Alexa chooses a number between 1 and 10 and also chooses the operation. After that, it asks the user operations with that number and that operation from one to ten. For example, if Alexas choses 1 and addition, it will ask: 1+1, 1+2, 1+3, ..., 1+10. To run it, you should say to Alexa "open arithmetic tables version two".
 
 
