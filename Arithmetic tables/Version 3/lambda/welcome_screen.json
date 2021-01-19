@@ -1,0 +1,88 @@
+{
+    "document": {
+        "type": "APL",
+        "version": "1.4",
+        "settings": {},
+        "theme": "dark",
+        "import": [
+            {
+                "name": "alexa-layouts",
+                "version": "1.2.0"
+            }
+        ],
+        "resources": [],
+        "styles": {},
+        "graphics": {},
+        "commands": {},
+        "layouts": {},
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "item": [
+                {
+                    "type": "AlexaHeadline",
+                    "primaryText": "Welcome to Arithmetic Tables",
+                    "secondaryText": "Start by telling me your name",
+                    "headerAttributionPrimacy": true,
+                    "backgroundImageSource": "https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80",
+                    "backgroundColorOverlay": true,
+                    "id": "CheeseHeadline",
+                    "speech": "${payload.headlineTemplateData.properties.welcomeSpeech}"
+                }
+            ]
+        },
+        "onMount": [
+            {
+                "type": "SpeakItem",
+                "componentId": "CheeseHeadline"
+            }
+        ]
+    },
+    "datasources": {
+        "headlineTemplateData": {
+            "type": "object",
+            "objectId": "headlineSample",
+            "properties": {
+                "backgroundImage": {
+                    "contentDescription": null,
+                    "smallSourceUrl": null,
+                    "largeSourceUrl": null,
+                    "sources": [
+                        {
+                            "url": "https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80",
+                            "size": "small",
+                            "widthPixels": 0,
+                            "heightPixels": 0
+                        },
+                        {
+                            "url": "https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80",
+                            "size": "large",
+                            "widthPixels": 0,
+                            "heightPixels": 0
+                        }
+                    ]
+                },
+                "textContent": {
+                    "primaryText": {
+                        "type": "PlainText",
+                        "text": "Welcome to Arithmetic Tables"
+                    },
+                    "secondaryText": {
+                        "type": "PlainText",
+                        "text": "Start by telling me your name"
+                    }
+                },
+                "logoUrl": "https://d2o906d8ln7ui1.cloudfront.net/images/templates_v2/icon_cheese.png",
+                "welcomeSpeechSSML": "<speak><amazon:emotion name='excited' intensity='medium'>Welcome to Arithmetic Tables</amazon:emotion></speak>"
+            },
+            "transformers": [
+                {
+                    "inputPath": "welcomeSpeechSSML",
+                    "transformer": "ssmlToSpeech",
+                    "outputName": "welcomeSpeech"
+                }
+            ]
+        }
+    }
+}

@@ -75,6 +75,18 @@
             "change player",
             "change name"
           ]
+        },
+        {
+          "name": "ChooseDifficultIntent",
+          "slots": [
+            {
+              "name": "difficult",
+              "type": "difficult"
+            }
+          ],
+          "samples": [
+            "{difficult}"
+          ]
         }
       ],
       "types": [
@@ -106,6 +118,52 @@
             }
           ],
           "name": "operation"
+        },
+        {
+          "values": [
+            {
+              "id": "2",
+              "name": {
+                "value": "hard",
+                "synonyms": [
+                  "it\u0027s impossible",
+                  "hard for me",
+                  "no easy way",
+                  "it\u0027s hard",
+                  "impossible",
+                  "harder",
+                  "difficult"
+                ]
+              }
+            },
+            {
+              "id": "1",
+              "name": {
+                "value": "medium",
+                "synonyms": [
+                  "not easy"
+                ]
+              }
+            },
+            {
+              "id": "0",
+              "name": {
+                "value": "easy",
+                "synonyms": [
+                  "it\u0027s possible",
+                  "too easy",
+                  "so easy",
+                  "be easy",
+                  "easiest",
+                  "simple way",
+                  "convenient",
+                  "easy way",
+                  "easier"
+                ]
+              }
+            }
+          ],
+          "name": "difficult"
         }
       ]
     },
@@ -140,6 +198,20 @@
               "prompts": {
                 "elicitation": "Elicit.Slot.484987937596.749067138950"
               }
+            }
+          ]
+        },
+        {
+          "name": "ChooseDifficultIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "difficult",
+              "type": "difficult",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
             }
           ]
         }
@@ -194,5 +266,5 @@
       }
     ]
   },
-  "version": "16"
+  "version": "18"
 }

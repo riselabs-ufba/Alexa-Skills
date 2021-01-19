@@ -4,8 +4,8 @@ from decimal import Decimal
 class DatabaseController:
     def __init__(self):
         self.table_name = 'user'
-        self.aws_access_key_id = 'AKIASP6ELZ6M2ZTGJVEL'
-        self.aws_secret_access_key = '4KeCtJvPGPdbafeGkf2boyxACOL7SJZd8GTlW5Tr'
+        self.aws_access_key_id = 'YOURIDKEYHERE'
+        self.aws_secret_access_key = 'YOURACESSKEYHERE'
         self.region_name = 'us-east-1'
 
     def connect_database(self):
