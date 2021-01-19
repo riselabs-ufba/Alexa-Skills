@@ -8,4 +8,7 @@ Let the user choose a number between 1 and 10 and an operation between addition,
 ### V2
 Alexa chooses a number between 1 and 10 and also chooses the operation. After that, it asks the user operations with that number and that operation from one to ten. For example, if Alexa choses 1 and addition, it will ask: 1+1, 1+2, 1+3, ..., 1+10. To run it, you should say to Alexa "open arithmetic tables version two".
 
+### V2
+Let the user have a username and select the level of difficulty between easy, medium and hard pre-determined by the code.
+
 
